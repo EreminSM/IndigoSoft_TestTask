@@ -45,7 +45,7 @@ public class UserConnectionsController : ControllerBase
     {
         UserConnectionEventValidator.Validate(userConnectionEvent);
 
-        await _dataReposity.AddConnectionEvent(userConnectionEvent.UserAccount, userConnectionEvent.IpAddress);
+        await _dataReposity.AddConnectionEvent(userConnectionEvent.UserAccountNumber, userConnectionEvent.IpAddress);
     }
 
     [HttpGet("/connections/latest/{accountNumber}")]

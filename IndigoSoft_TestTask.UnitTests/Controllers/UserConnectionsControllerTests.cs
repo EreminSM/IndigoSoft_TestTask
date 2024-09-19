@@ -148,7 +148,7 @@ public class UserConnectionsControllerTests
         var request = new UserConnectionEvent()
         {
             IpAddress = "176.15.167.59",
-            UserAccount = 111222333
+            UserAccountNumber = 111222333
         };
 
         // Act
@@ -167,7 +167,7 @@ public class UserConnectionsControllerTests
         var request = new UserConnectionEvent()
         {
             IpAddress = "176.15.167.59",
-            UserAccount = -1
+            UserAccountNumber = -1
         };
 
         // Act & assert
@@ -184,7 +184,7 @@ public class UserConnectionsControllerTests
         var accountNumber = new UserConnectionEvent()
         {
             IpAddress = "176.15.167.59",
-            UserAccount = 0
+            UserAccountNumber = 0
         };
 
         // Act & assert
@@ -202,7 +202,7 @@ public class UserConnectionsControllerTests
         var request = new UserConnectionEvent()
         {
             IpAddress = "sddsd@24",
-            UserAccount = 111222333
+            UserAccountNumber = 111222333
         };
 
         // Act & assert
@@ -219,7 +219,7 @@ public class UserConnectionsControllerTests
         var request = new UserConnectionEvent()
         {
             IpAddress = "",
-            UserAccount = 111222333
+            UserAccountNumber = 111222333
         };
 
         // Act & assert

@@ -7,6 +7,6 @@ public class UserConnectionEventValidator
     public static void Validate(UserConnectionEvent userConnectionEvent)
     {
         IpAddressValidator.Validate(userConnectionEvent.IpAddress);
-        AccountNumberValidator.Validate(userConnectionEvent.UserAccount);
+        AccountNumberValidator.Validate(userConnectionEvent.UserAccountNumber);
     }
 }

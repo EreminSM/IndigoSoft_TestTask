@@ -2,7 +2,7 @@
 {
     public class UserConnectionEvent
     {
-        public required long UserAccount { set; get; }
+        public required long UserAccountNumber { set; get; }
         public required string IpAddress { set; get; }
     }
 }
