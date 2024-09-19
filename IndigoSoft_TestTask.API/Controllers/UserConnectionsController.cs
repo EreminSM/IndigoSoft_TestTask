@@ -1,7 +1,7 @@
 using IndigoSoft_TestTask.API.Models;
+using IndigoSoft_TestTask.API.Validators;
 using IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace IndigoSoft_TestTask.API.Controllers;
 
@@ -19,35 +19,31 @@ public class UserConnectionsController : ControllerBase
     [HttpPost("/users/")]
     public async Task AddUser([FromBody] long accountNumber)
     {
-        if (accountNumber <= 0)
-        {
-            throw new BadHttpRequestException(
-                $"The account number should have non-negative and non-null value, value that was passed: '{accountNumber}'");
-        }
+        AccountNumberValidator.Validate(accountNumber);
 
         await _dataReposity.AddUser(accountNumber);
     }
 
     [HttpGet("/users/{partOfIpAddress}")]
-    public async Task<IEnumerable<long>> GetUsersByPartOfIPAddress(string partOfIpAddress)
+    public async Task<IEnumerable<long>> GetUsersByPartOfIpAddress(string partOfIpAddress)
     {
+        PartOfIPAddressValidator.Validate(partOfIpAddress);
+
         return await _dataReposity.GetUsersByPartOfIp(partOfIpAddress);
     }
 
     [HttpGet("/all_ip_addresses/{accountNumber}")]
-    public async Task<IEnumerable<string>> GetAllIPAddressesForAccount(long accountNumber)
+    public async Task<IEnumerable<string>> GetAllIpAddressesForAccount(long accountNumber)
     {
+        AccountNumberValidator.Validate(accountNumber);
+
         return await _dataReposity.GetIpAddressesByAccountId(accountNumber);
     }
 
     [HttpPost("/connections/")]
     public async Task AddUserConnection([FromBody] UserConnectionEvent userConnectionEvent)
     {
-        var isValidIpAddress = IPAddress.TryParse(userConnectionEvent.IpAddress, out _);
-        if (!isValidIpAddress)
-        {
-            throw new BadHttpRequestException($"The value '{userConnectionEvent.IpAddress}' is not correct IP4/IP6 address");
-        }
+        IpAddressValidator.Validate(userConnectionEvent.IpAddress);
 
         await _dataReposity.AddConnectionEvent(userConnectionEvent.UserAccount, userConnectionEvent.IpAddress);
     }
