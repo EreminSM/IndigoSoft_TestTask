@@ -43,6 +43,30 @@ public class UserConnectionsControllerTests : IClassFixture<TestsFixture>
     }
 
     [Fact]
+    public async Task When_AddUserCallsWithAccountNumberOfAlreadyExistingUser_UserDosNotAddsSecondTimeToDb()
+    {
+        // Arrange
+        await RecreateDb();
+
+        var accountNumbers = new List<long>() { 111111111, 222222222, 333333333, 444444444, 555555555 };
+
+        // Act & assert
+        foreach (var accountNumber in accountNumbers)
+        {
+            await _controller.AddUser(accountNumber);
+        }
+
+        await Assert.ThrowsAsync<ArgumentException>(async () => await _controller.AddUser(accountNumbers[0]));
+        var existedUsers = await _dbContext.Users.ToListAsync();
+        Assert.Equal(accountNumbers.Count, existedUsers.Count);
+
+        for (int i = 0; i < existedUsers.Count; i++)
+        {
+            Assert.Equal(accountNumbers[i], existedUsers[i].AccountNumber);
+        }
+    }
+
+    [Fact]
     public async Task When_AddUserConnectionCallsAndThenGetUsersByPartOfIpAddressWithFullIpAddressCalls_ThenItReturnsExceptedResult()
     {
         // Arrange
