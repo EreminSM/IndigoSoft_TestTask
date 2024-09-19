@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoSoft_TestTask.API", "IndigoSoft_TestTask.API\IndigoSoft_TestTask.API.csproj", "{18F58CAE-765E-4BEF-A095-27E25450417C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL", "IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL\IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL.csproj", "{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{18F58CAE-765E-4BEF-A095-27E25450417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F58CAE-765E-4BEF-A095-27E25450417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F58CAE-765E-4BEF-A095-27E25450417C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
