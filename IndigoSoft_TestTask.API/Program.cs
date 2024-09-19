@@ -1,4 +1,5 @@
 using IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL;
+using IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<IndigoSoftTestTaskDbContext>(options =>
 {
     options.UseNpgsql(configuration.GetConnectionString(nameof(IndigoSoftTestTaskDbContext)));
 });
+
+builder.Services.AddTransient<IDataReposity, DataReposity>();
 
 var app = builder.Build();
 
