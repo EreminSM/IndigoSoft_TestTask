@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoSoft_TestTask.API", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL", "IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL\IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL.csproj", "{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoSoft_TestTask.UnitTests", "IndigoSoft_TestTask.UnitTests\IndigoSoft_TestTask.UnitTests.csproj", "{7AF008F1-0961-4C82-87AC-7BE172B19C55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF3EB3C6-79E5-421F-9E71-E2375C9F621C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF008F1-0961-4C82-87AC-7BE172B19C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF008F1-0961-4C82-87AC-7BE172B19C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF008F1-0961-4C82-87AC-7BE172B19C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF008F1-0961-4C82-87AC-7BE172B19C55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

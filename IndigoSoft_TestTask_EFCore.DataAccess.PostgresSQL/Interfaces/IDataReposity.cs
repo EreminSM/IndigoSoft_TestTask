@@ -6,6 +6,6 @@ public interface IDataReposity
     Task AddConnectionEvent(long accountNumber, string ipAddress);
     Task<List<long>> GetUsersByPartOfIp(string partOfIp);
     Task<List<string>> GetIpAddressesByAccountId(long accountId);    
-    Task<KeyValuePair<string, DateTime>> GetIpAddressAndTimeOfLastConnection(long accountId);
+    Task<KeyValuePair<string, DateTime>> GetIpAddressAndTimeOfLatestConnection(long accountId);
 
 }

@@ -43,7 +43,7 @@ public class UserConnectionsController : ControllerBase
     [HttpPost("/connections/")]
     public async Task AddUserConnection([FromBody] UserConnectionEvent userConnectionEvent)
     {
-        IpAddressValidator.Validate(userConnectionEvent.IpAddress);
+        UserConnectionEventValidator.Validate(userConnectionEvent);
 
         await _dataReposity.AddConnectionEvent(userConnectionEvent.UserAccount, userConnectionEvent.IpAddress);
     }
@@ -51,6 +51,8 @@ public class UserConnectionsController : ControllerBase
     [HttpGet("/connections/latest/{accountNumber}")]
     public async Task<KeyValuePair<string, DateTime>> GetLatestConnectionInfoForAccount(long accountNumber)
     {
-        return await _dataReposity.GetIpAddressAndTimeOfLastConnection(accountNumber);
+        AccountNumberValidator.Validate(accountNumber);
+
+        return await _dataReposity.GetIpAddressAndTimeOfLatestConnection(accountNumber);
     }
 }

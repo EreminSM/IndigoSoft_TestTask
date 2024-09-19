@@ -80,7 +80,7 @@ public class DataReposity : IDataReposity
         return await query.ToListAsync();
     }
 
-    public async Task<KeyValuePair<string, DateTime>> GetIpAddressAndTimeOfLastConnection(long accountId)
+    public async Task<KeyValuePair<string, DateTime>> GetIpAddressAndTimeOfLatestConnection(long accountId)
     {
         var query = _dbContext.ConnectionEvents
             .AsNoTracking()
