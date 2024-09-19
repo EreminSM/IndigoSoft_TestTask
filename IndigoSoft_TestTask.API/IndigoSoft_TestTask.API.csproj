@@ -11,4 +11,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL\IndigoSoft_TestTask_EFCore.DataAccess.PostgresSQL.csproj" />
+  </ItemGroup>
+
 </Project>
